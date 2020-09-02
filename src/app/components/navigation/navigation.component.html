@@ -1,0 +1,23 @@
+<div [ngStyle]="{'margin-left':isOpenNav?'250px':'0px'}" id="main">
+	<nav class="navbar navbar-light bg-light justify-content-between">
+		<span class="hamburger" (click)="isOpenNav = !isOpenNav" *ngIf="!isOpenNav">&#9776;</span>
+		<span class="closeHamburger" (click)="isOpenNav = !isOpenNav" *ngIf="isOpenNav">&times;</span>
+
+		<a href="#" class="navbar-brand">{{'AppName' | translate}}</a>
+		<form class="form-inline ml-lg-3">
+			<input class="form-control mr-sm-2" type="search" placeholder="{{'Navbar.SearchWatermark' | translate}}" aria-label="Search">
+			<button class="btn btn-outline-primary my-2 my-sm-0" type="submit" (click)="search()">{{'Navbar.Search' | translate}}</button>
+		</form>
+	
+		<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+			<li class="nav-item active">
+				<a class="btn btn-outline-danger" (click)="logout()">{{'Navbar.Logout' | translate}} <span class="sr-only">(current)</span></a>
+			</li>
+		</ul>
+	</nav>
+	<div id="mySidenav" class="sidenav" [style.width]="isOpenNav?'250px':'0px'">
+		<a (click)="isOpenNav = !isOpenNav" [routerLink]="['/']">{{'Menu.Home' | translate}}</a>
+		<a (click)="isOpenNav = !isOpenNav" [routerLink]="['/list']">{{'Menu.List' | translate}}</a>
+		<a (click)="logout();">{{'Menu.Logout' | translate}}</a>
+	</div>
+</div>

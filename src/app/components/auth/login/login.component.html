@@ -1,0 +1,30 @@
+<div class="container ml-auto mr-auto">
+	<form [formGroup]="loginForm" (ngSubmit)="onLogIn()">
+		<mat-card>
+			<mat-card-title>
+				<span>Login</span>
+			</mat-card-title>
+			<mat-card-content>
+				<mat-form-field>
+					<input matInput formControlName="email" name="email" pattern="^\S+@\S+$" required="required" placeholder="Email" />
+				</mat-form-field>
+				<mat-form-field>
+					<input matInput formControlName="password" name="password" required="required" pattern=".{4,30}" type="password" placeholder="Password" />
+				</mat-form-field>
+				<a class="link" 
+					[routerLink]="['/forgot-password']" 
+					routerLinkActive="link-active"><span>Forgot password?</span></a>
+				<hr />
+			</mat-card-content>
+			<mat-card-actions>
+				<button mat-raised-button type="submit" color="primary">Login</button>
+			</mat-card-actions>
+			<div class="link">
+				<span>Don't have an account?&nbsp;</span>
+				<a
+				[routerLink]="['/register']"
+				routerLinkActive="link-active"><span>Register</span></a>
+			</div>
+		</mat-card>
+	</form>
+</div>

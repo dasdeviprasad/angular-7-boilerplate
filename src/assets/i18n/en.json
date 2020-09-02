@@ -1,0 +1,19 @@
+{
+    "AppName": "Demo App", 
+
+    "Navbar": {
+        "Search": "Search", 
+        "SearchWatermark": "Search...",
+        "Logout": "Logout"
+    },
+
+    "Menu": {
+        "Home": "Home", 
+        "List": "List", 
+        "Logout": "Logout"
+    },
+
+    "Home": {
+        "Title": "Home"
+    }
+}
